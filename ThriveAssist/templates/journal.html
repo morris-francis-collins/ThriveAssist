@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block title %}: Journal{% endblock %}
+
+{% block content %}
+    <div class="journal-page">
+        <div class="journal-history">
+            <ul class="journal-sidebar">
+                {% for entry in entries %}
+                    <li>
+                        <a href="#" class="journal-link" data-title="{{ entry.title }}" data-entry="{{ entry.entry }}">
+                            {{ entry.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <script>
+                document.querySelectorAll('.journal-link').forEach(link => {
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        document.querySelector('input[name="title"]').value = this.dataset.title;
+                        document.querySelector('textarea[name="entry"]').value = this.dataset.entry;
+                    });
+                });
+            </script>
+            <!--{% for entry in entries %}
+                <div class="journal-entry">
+                    <h2>{{ entry.title }}</h2>
+                    <p>{{ entry.entry }}</p>
+                </div>
+            {% endfor %}-->
+        </div>
+        <div class="journal">
+                <h1> Journal</h1>
+                <div>
+                    <input placeholder="Title" class="journal-input" name="title" autocomplete="off">
+                </div>
+                <div>
+                    <label for="answer1">{{ questions[0] }}</label>
+                    <input type="hidden" name="question1" value={{ questions[0] }}>
+                    <input type="text" id="answer1" name="question1" class="journal-input" placeholder="answer">
+                </div>
+                <div>
+                    <label for="answer2">{{ questions[1] }}</label>
+                    <input type="hidden" name="question2" value={{ questions[1] }}>
+                    <input type="text" id="answer2" name="question2" class="journal-input" placeholder="answer">
+                </div>
+                <div>
+                    <label for="answer3">{{ questions[2] }}</label>
+                    <input type="hidden" name="question3" value={{ questions[2] }}>
+                    <input type="text" id="answer3" name="question3" class="journal-input" placeholder="answer">
+                </div>
+                <div>
+                    <textarea placeholder="Entry" class="journal-input" name="journal" autocomplete="off"></textarea>
+                </div>            
+                <div>
+                    <button class="form-submit" onclick="post_helper()">Submit</button>
+                </div>
+            <script>
+                function post_helper(){
+                    console.log('post_helper');
+                    var title = document.querySelector('input[name="title"]').value;
+                    var mood = document.querySelector('input[name="mood"]').value;
+                    var weather = document.querySelector('input[name="weather"]').value;
+                    var productivity = document.querySelector('input[name="productivity"]').value;
+                    var entry = document.querySelector('textarea[name="entry"]').value;
+                    post('/api/journal', {title: title, mood: mood, weather: weather, productivity: productivity, entry: entry});
+                }
+                function post(path, params, method='post') {
+                    $.ajax({
+                        url: path,
+                        data: params,
+                        type: method,
+                        dataType: 'json',
+                        error: function(error){
+                            console.log(error);
+                        }
+                    });
+                }
+            </script>
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+{% endblock %}

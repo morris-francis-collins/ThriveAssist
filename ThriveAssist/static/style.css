@@ -1,0 +1,131 @@
+.body{
+    margin: 0;
+    padding: 0;
+}
+/* Style for the Navbar */
+.navbar {
+    background-color: #EB4631; /* Red background for the navbar */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Space between left and right items */
+    align-items: center; /* Center vertically */
+}
+
+.navbar div {
+    display: flex; /* Make both left and right sections flexible */
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove bullets */
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-link-left, .navbar-link-right {
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-link-left:hover, .navbar-link-right:hover {
+    background-color: darkred; /* Darker red on hover */
+    border-radius: 5px;
+}
+
+/* Additional styling for the rest of the page */
+
+/* Login Form Styling */
+.login-form {
+    width: 100%;
+    max-width: 400px; /* Set a max-width for responsiveness */
+    margin: 30px auto; /* Center the form horizontally */
+    padding: 20px;
+    background-color: #f8f8f8; /* Light background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+}
+
+.login-form h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.login-input:focus {
+    border-color: #ff4d4d; /* Highlight on focus */
+    outline: none; /* Remove default outline */
+}
+
+.form-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: red; /* Red background for submit button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+    background-color: darkred; /* Darker red on hover */
+}
+
+/* Background styling */
+.background {
+    background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+.journal-page{
+    display: inline-flex;
+    overflow: scroll;
+    height: 100vh;
+    width: 100%;
+
+}
+.journal-history{
+    width: 30%;
+    max-width: 300px;
+    height: 100%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.journal-form{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 5px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.journal{
+
+}
