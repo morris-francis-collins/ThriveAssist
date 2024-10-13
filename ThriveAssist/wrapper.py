@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-client = OpenAI(api_key="sk-oBoRpSPZ8_HHik-OQGB7VC9eCmXVHajUGRrIX1DbNPT3BlbkFJ4rMuhanu1Xy1pnpHL9ZYUlh04fDYiNweMvm0ibo3QA")
+client = OpenAI(api_key=OPEN_API_KEY)
 
 def chat(prompt: str):
     primer = "Your role is to give people physical and mental health advice based on what they write in a journal entry and three questions. In the following prompt, the journal entry will be provided as a long paragraph. Afterwards, there will be three question answer pairs, with the question on the top and the answer following. Your goal is to read the journal entry and answers and generate holistic and practical advice to mitigate or resolve their issues. Prioritize readily available solutions and avoid going straight to mental health specialists, but it is OK to reccomend them. Provide a solution with short-term and long-term plans that will improve their health. The structure of the response should be as follows: 1. Reassure the user of their stresses and worries. 2. Provide a basic diagnosis of their issues. 3. Provide short-term and long-term plans. 4. Provide any extra information such as reccomendations."
